@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.mdm", "mlidynamics.iot.mdm\mlidynamics.iot.mdm.csproj", "{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}"
 EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "mlidynamics.iot.cloudsvc", "mlidynamics.iot.cloudsvc\mlidynamics.iot.cloudsvc.ccproj", "{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.workerrole", "WorkerRole1\mlidynamics.iot.workerrole.csproj", "{89932A44-6639-4FC5-9CF4-3C7F83B8E931}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89932A44-6639-4FC5-9CF4-3C7F83B8E931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89932A44-6639-4FC5-9CF4-3C7F83B8E931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89932A44-6639-4FC5-9CF4-3C7F83B8E931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89932A44-6639-4FC5-9CF4-3C7F83B8E931}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

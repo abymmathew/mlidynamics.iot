@@ -1,33 +1,52 @@
-﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
 using System.Threading.Tasks;
-using mlidynamics.iot.models;
 using Microsoft.ServiceBus.Messaging;
 
 namespace mlidynamics.iot.azure
 {
     public class DeviceEventProcessor : IEventProcessor
     {
-        public static readonly DataContractSerializer TelemetryModelSerializer =
-            new DataContractSerializer(typeof (TelemetryModel));
+        private Stopwatch _checkpointStopWatch;
 
-        public Task CloseAsync(PartitionContext context, CloseReason reason)
+        public async Task CloseAsync(PartitionContext context, CloseReason reason)
         {
-            return Task.FromResult<object>(null);
+            if (reason == CloseReason.Shutdown)
+            {
+                await context.CheckpointAsync();
+            }
         }
 
         public Task OpenAsync(PartitionContext context)
         {
-            return Task.FromResult<object>(null);
-        }
-
-        public Task ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
-        {
-            foreach (var message in messages)
+            lock (this)
             {
+                _checkpointStopWatch = new Stopwatch();
+                _checkpointStopWatch.Start();
             }
 
             return Task.FromResult<object>(null);
+        }
+
+        public async Task ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
+        {
+            foreach (var message in messages)
+            {
+                var data = Encoding.UTF8.GetString(message.GetBytes());
+
+                // do something interesting here
+            }
+
+            if (_checkpointStopWatch.Elapsed.Ticks > TimeSpan.FromMinutes(5).Ticks)
+            {
+                await context.CheckpointAsync();
+                lock (this)
+                {
+                    _checkpointStopWatch.Restart();
+                }
+            }
         }
     }
 }
