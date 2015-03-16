@@ -37,19 +37,20 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="mlidynamics.iot.workerroleContent" />
-  </ItemGroup>
-  <ItemGroup>
-    <DiagnosticsConfiguration Include="mlidynamics.iot.workerroleContent\diagnostics.wadcfgx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WorkerRole1\mlidynamics.iot.workerrole.csproj">
+    <ProjectReference Include="..\mlidynamics.iot.workerrole\mlidynamics.iot.workerrole.csproj">
       <Name>mlidynamics.iot.workerrole</Name>
       <Project>{89932a44-6639-4fc5-9cf4-3c7f83b8e931}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>mlidynamics.iot.workerrole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="mlidynamics.iot.workerroleContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="mlidynamics.iot.workerroleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

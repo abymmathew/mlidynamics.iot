@@ -91,7 +91,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="azure\DeviceEventHubReceiver.cs" />
     <Compile Include="azure\DeviceEventProcessor.cs" />
     <Compile Include="azure\HttpClientHelper.cs" />
     <Compile Include="models\DeviceInfoModel.cs" />

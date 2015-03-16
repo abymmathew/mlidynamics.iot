@@ -2,6 +2,10 @@
 <ServiceConfiguration serviceName="mlidynamics.iot.cloudsvc" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
   <Role name="mlidynamics.iot.workerrole">
     <Instances count="1" />
-    <ConfigurationSettings />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://mlidynamics-iot-telemetry-ns.servicebus.windows.net/;SharedAccessKeyName=publisher;SharedAccessKey=NWfQcGnYb6wc6S+TRWzUysQldcmZLlifu0ZBqXs18SU=" />
+      <Setting name="Azure.Storage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mlidynamicsiot;AccountKey=aXFFwA+IRaqUT/Tf9hk3AiPaKRXRjYbYF+OpcPlxJyB5RBBtiPGLIJv2DGzzcGbT2hGAPk3SBbv2P7UIA4Dd7A==" />
+      <Setting name="eventHubName" value="mlidynamics-iot-telemetry" />
+    </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

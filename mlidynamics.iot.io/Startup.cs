@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using mlidynamics.iot.io;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(mlidynamics.iot.io.Startup))]
+[assembly: OwinStartup(typeof (Startup))]
 
 namespace mlidynamics.iot.io
 {

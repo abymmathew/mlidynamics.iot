@@ -22,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.mdm", "mlid
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "mlidynamics.iot.cloudsvc", "mlidynamics.iot.cloudsvc\mlidynamics.iot.cloudsvc.ccproj", "{1B1ED65B-E0E3-4B61-96E7-9D887BFD58DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.workerrole", "WorkerRole1\mlidynamics.iot.workerrole.csproj", "{89932A44-6639-4FC5-9CF4-3C7F83B8E931}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.workerrole", "mlidynamics.iot.workerrole\mlidynamics.iot.workerrole.csproj", "{89932A44-6639-4FC5-9CF4-3C7F83B8E931}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

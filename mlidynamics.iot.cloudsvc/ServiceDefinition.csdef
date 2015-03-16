@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="mlidynamics.iot.cloudsvc" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
-  <WorkerRole name="mlidynamics.iot.workerrole" vmsize="Small" />
+  <WorkerRole name="mlidynamics.iot.workerrole" vmsize="Small">
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" />
+      <Setting name="Azure.Storage.ConnectionString" />
+      <Setting name="eventHubName" />
+    </ConfigurationSettings>
+  </WorkerRole>
 </ServiceDefinition>

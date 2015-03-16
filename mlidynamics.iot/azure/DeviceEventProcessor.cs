@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using mlidynamics.iot.models;
 using Microsoft.ServiceBus.Messaging;
+using Newtonsoft.Json;
 
 namespace mlidynamics.iot.azure
 {
@@ -30,18 +32,29 @@ namespace mlidynamics.iot.azure
             return Task.FromResult<object>(null);
         }
 
-        public async Task ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
+        public async Task ProcessEventsAsync(PartitionContext partitionContext, IEnumerable<EventData> messages)
         {
-            foreach (var message in messages)
+            try
             {
-                var data = Encoding.UTF8.GetString(message.GetBytes());
+                foreach (var message in messages)
+                {
+                    var data = Encoding.Unicode.GetString(message.GetBytes());
 
-                // do something interesting here
+                    // do something interesting here
+                    var telemetryModel = JsonConvert.DeserializeObject<TelemetryModel>(data);
+
+                    Trace.TraceInformation("Message received.  Partition: '{0}', Device: '{1}', Data: '{2}'",
+                        partitionContext.Lease.PartitionId, telemetryModel.DeviceId, telemetryModel.Temperature);
+                }
+            }
+            catch (Exception exp)
+            {
+                Trace.TraceError("Error in processing: " + exp.Message);
             }
 
             if (_checkpointStopWatch.Elapsed.Ticks > TimeSpan.FromMinutes(5).Ticks)
             {
-                await context.CheckpointAsync();
+                await partitionContext.CheckpointAsync();
                 lock (this)
                 {
                     _checkpointStopWatch.Restart();

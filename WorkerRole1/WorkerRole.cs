@@ -12,7 +12,7 @@ using Microsoft.WindowsAzure.Storage;
 
 namespace WorkerRole1
 {
-    public class EventHubProcessorWorkerRole : RoleEntryPoint
+    public class WorkerRole : RoleEntryPoint
     {
         private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent runCompleteEvent = new ManualResetEvent(false);
