@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot", "mlidynamics.iot\mlidynamics.iot.csproj", "{16156911-D4CB-430D-BA2A-3ACB93B03BCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.io", "mlidynamics.iot.io\mlidynamics.iot.io.csproj", "{01061CCF-B76E-44A2-901B-BDFCA29EEDB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{F52B4686-FECC-459A-8113-C86488DF3BBA}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{4DE28210-BE02-46CF-9230-7C746F02335E}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\mlidynamicsiotio-WAWS-dev.json = PublishScripts\Configurations\mlidynamicsiotio-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mlidynamics.iot.mdm", "mlidynamics.iot.mdm\mlidynamics.iot.mdm.csproj", "{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16156911-D4CB-430D-BA2A-3ACB93B03BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16156911-D4CB-430D-BA2A-3ACB93B03BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16156911-D4CB-430D-BA2A-3ACB93B03BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16156911-D4CB-430D-BA2A-3ACB93B03BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01061CCF-B76E-44A2-901B-BDFCA29EEDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01061CCF-B76E-44A2-901B-BDFCA29EEDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01061CCF-B76E-44A2-901B-BDFCA29EEDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01061CCF-B76E-44A2-901B-BDFCA29EEDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5C3DEE-FCF1-4C4D-8500-7B3CB03B50A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4DE28210-BE02-46CF-9230-7C746F02335E} = {F52B4686-FECC-459A-8113-C86488DF3BBA}
+	EndGlobalSection
+EndGlobal
