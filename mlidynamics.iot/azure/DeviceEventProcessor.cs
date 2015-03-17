@@ -38,7 +38,7 @@ namespace mlidynamics.iot.azure
             {
                 foreach (var message in messages)
                 {
-                    var data = Encoding.Unicode.GetString(message.GetBytes());
+                    var data = Encoding.UTF8.GetString(message.GetBytes());
 
                     // do something interesting here
                     var telemetryModel = JsonConvert.DeserializeObject<TelemetryModel>(data);

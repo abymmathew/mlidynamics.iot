@@ -3,8 +3,8 @@
   <Role name="mlidynamics.iot.workerrole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://mlidynamics-iot-telemetry-ns.servicebus.windows.net/;SharedAccessKeyName=publisher;SharedAccessKey=NWfQcGnYb6wc6S+TRWzUysQldcmZLlifu0ZBqXs18SU=" />
-      <Setting name="Azure.Storage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mlidynamicsiot;AccountKey=aXFFwA+IRaqUT/Tf9hk3AiPaKRXRjYbYF+OpcPlxJyB5RBBtiPGLIJv2DGzzcGbT2hGAPk3SBbv2P7UIA4Dd7A==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://mlidynamics-iot-telemetry-ns.servicebus.windows.net/;SharedAccessKeyName=publisher;SharedAccessKey=EjDcCVKr0mXjxgBy3bOg7DnezUMuPB111wA6EcUzi0Y=" />
+      <Setting name="Azure.Storage.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=mlidynamicsiot;AccountKey=m/NesGRk9yhq99O79HPA9uCIo3z27FUdHY+dSt29+kmWXTzdhD82zQtGF7SVHrBlZpiph+2X69N2oSQ1pNfSeg==" />
       <Setting name="eventHubName" value="mlidynamics-iot-telemetry" />
     </ConfigurationSettings>
   </Role>

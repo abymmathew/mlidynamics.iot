@@ -12,6 +12,7 @@
     <AssemblyName>mlidynamics.iot.cloudsvc</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
     <Name>mlidynamics.iot.cloudsvc</Name>
+    <PackageEnableRemoteDebugger>True</PackageEnableRemoteDebugger>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,9 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="mlidynamics.iot.workerroleContent\" />
+    <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="mlidynamics.iot.workerroleContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishProfile Include="Profiles\mlidynamics-iot-workerProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

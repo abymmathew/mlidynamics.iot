@@ -22,7 +22,7 @@ namespace mlidynamics.iot.io.Controllers
             // do processing here
             var jsonString = JsonConvert.SerializeObject(message);
 
-            _client.Send(new EventData(Encoding.Unicode.GetBytes(jsonString))
+            _client.Send(new EventData(Encoding.UTF8.GetBytes(jsonString))
             {
                 PartitionKey = "0"
             });

@@ -8,7 +8,7 @@ using Microsoft.ServiceBus.Messaging;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.ServiceRuntime;
 
-namespace WorkerRole1
+namespace mlidynamics.iot.workerrole
 {
     public class EventHubProcessorWorkerRole : RoleEntryPoint
     {

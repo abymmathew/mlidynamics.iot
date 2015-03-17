@@ -13,12 +13,15 @@ namespace mlidynamics.iot.models
         public string Channel { get; set; }
 
         [DataMember]
+        public long Location { get; set; }
+
+        [DataMember]
         public double Temperature { get; set; }
 
         [DataMember]
         public double Humidity { get; set; }
 
         [DataMember]
-        public bool PresenceDetected { get; set; }
+        public short PresenceDetected { get; set; }
     }
 }
