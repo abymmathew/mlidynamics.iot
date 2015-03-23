@@ -1,6 +1,6 @@
 ﻿namespace mlidynamics.iot.mdm
 {
-    public class Class1
+    public class MdmBase
     {
     }
 }

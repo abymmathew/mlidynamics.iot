@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="4458d5d5-5c0f-4d54-b89e-fb1ebe3bab3b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="fab50492-8782-4e03-a40e-98d180bca372" name="Comment1">
+      <body>IoT Reference Architecture</body>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="b58dff81-7e65-4e6c-979d-24970a1bb5be" name="IoT Base" requiredNamespace="mlidynamics.iot">
+      <references>
+        <reference Id="56e71129-7554-45bb-897f-9455462d8cd6" name="mlidynamics.iot">
+          <ArtifactNode Label="mlidynamics.iot" Category="CodeSchema_Project" Id="(Assembly=../mlidynamics.iot/mlidynamics.iot.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=mlidynamics.iot)" Label="mlidynamics.iot.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="a9cf2d6c-2b82-430d-9432-2e572f5b13d3" name="REST API" requiredNamespace="mlidynamics.iot.io">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="da0cc42f-b5c6-41d7-a237-6e4ad9a964c2" direction="Forward">
+          <layerMoniker Id="b58dff81-7e65-4e6c-979d-24970a1bb5be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="a33dc2a6-1a03-40af-bacd-18de1801ec46" name="mlidynamics.iot.io">
+          <ArtifactNode Label="mlidynamics.iot.io" Category="CodeSchema_Project" Id="(Assembly=../mlidynamics.iot.io/mlidynamics.iot.io.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=mlidynamics.iot.io)" Label="mlidynamics.iot.io.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="7f2cfff7-450f-4e55-beff-4b4e8e5fa099" name="Worker Role" requiredNamespace="mlidynamics.iot.workerrole">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f963bd27-f869-4c73-a855-cc2ccaa91d8a" direction="Forward">
+          <layerMoniker Id="b58dff81-7e65-4e6c-979d-24970a1bb5be" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="9d2ac36f-690a-40aa-aa56-726bbfb4ef53" name="mlidynamics.iot.workerrole">
+          <ArtifactNode Label="mlidynamics.iot.workerrole" Category="CodeSchema_Project" Id="(Assembly=../mlidynamics.iot.workerrole/mlidynamics.iot.workerrole.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=mlidynamics.iot.workerrole)" Label="mlidynamics.iot.workerrole.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="f50a4833-2256-4f94-9653-87042ab37aa2" name="Worker Role Cloud Service" requiredNamespace="mlidynamics.iot.cloudsvc">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="99a008c4-fb03-4c9c-ac93-abc5d7118de1" direction="Forward">
+          <layerMoniker Id="7f2cfff7-450f-4e55-beff-4b4e8e5fa099" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="722b323a-6b1a-4676-b773-db58fe383638" name="mlidynamics.iot.cloudsvc">
+          <ArtifactNode Label="mlidynamics.iot.cloudsvc" Category="CodeSchema_Project" Id="(Assembly=../mlidynamics.iot.cloudsvc/mlidynamics.iot.cloudsvc.ccproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="133c2219-c50e-4af1-b0b9-af8909fad658" name="IoT MDM" requiredNamespace="mlidynamics.iot.mdm">
+      <references>
+        <reference Id="4fed868d-640f-42a7-ade7-a68ef71be710" name="mlidynamics.iot.mdm">
+          <ArtifactNode Label="mlidynamics.iot.mdm" Category="CodeSchema_Project" Id="(Assembly=../mlidynamics.iot.mdm/mlidynamics.iot.mdm.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=mlidynamics.iot.mdm)" Label="mlidynamics.iot.mdm.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

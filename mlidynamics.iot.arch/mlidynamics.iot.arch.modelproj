@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b54e8ab1-6e1b-45b9-ab95-9dfa6e18d3df}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>mlidynamics.iot.arch</Name>
+    <RootNamespace>mlidynamics.iot.arch</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\mlidynamics.iot.arch.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="mlidynamics.iot.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="mlidynamics.iot.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>mlidynamics.iot.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="mlidynamics.iot.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>mlidynamics.iot.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mlidynamics.iot.io\mlidynamics.iot.io.csproj">
+      <Name>mlidynamics.iot.io</Name>
+      <Project>{01061ccf-b76e-44a2-901b-bdfca29eedb5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\mlidynamics.iot.mdm\mlidynamics.iot.mdm.csproj">
+      <Name>mlidynamics.iot.mdm</Name>
+      <Project>{2a5c3dee-fcf1-4c4d-8500-7b3cb03b50a1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\mlidynamics.iot.workerrole\mlidynamics.iot.workerrole.csproj">
+      <Name>mlidynamics.iot.workerrole</Name>
+      <Project>{89932a44-6639-4fc5-9cf4-3c7f83b8e931}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\mlidynamics.iot\mlidynamics.iot.csproj">
+      <Name>mlidynamics.iot</Name>
+      <Project>{16156911-d4cb-430d-ba2a-3acb93b03bce}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
